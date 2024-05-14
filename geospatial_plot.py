@@ -11,15 +11,6 @@ from matplotlib_scalebar.scalebar import ScaleBar
 from shapely.geometry import Point  
 
 
-# In[9]:
-
-
-cd D:\medium\geo_spatial
-
-
-# In[10]:
-
-
 from pyproj import Proj, transform
 
 # This function converts from epsg 4362 to 3857
@@ -31,19 +22,14 @@ def convert(lon, lat):
     return (x,y)
 
 
-# In[11]:
+
+shapefile = gpd.read_file("hybas_lake_as_lev04_v1c.shp").to_crs(epsg=3857)
 
 
-shapefile = gpd.read_file("E:\hybas_lake_as_lev04_v1c\hybas_lake_as_lev04_v1c.shp").to_crs(epsg=3857)
-
-# the HYBAS id for indus and kabul
 required_ids = [4040648310, 4040648320]
 
 Kabul_shapefile = shapefile.loc[shapefile.HYBAS_ID == required_ids[0]]
 Indus_shapefile = shapefile.loc[shapefile.HYBAS_ID == required_ids[1]]
-
-
-# In[12]:
 
 
 fig, ax = plt.subplots(figsize=(12, 8), dpi=200)
@@ -83,9 +69,6 @@ Tarbela_gpd.plot(ax=ax, color='k', marker = '^', markersize=120, zorder=2)
 ax.legend(fontsize=14)
 plt.savefig('study_area.pdf', bbox_inches='tight')
 plt.show()
-
-
-# In[ ]:
 
 
 
