@@ -1,1 +1,1 @@
-![image](https://github.com/haris021/Geo_spatial/assets/53980980/0dc78ad7-8b22-424b-b479-d6c578a40932)
+![image](https://github.com/haris021/Geo_spatial/assets/53980980/9926850c-93f2-420f-9bb9-2cf8a0a75081)
